@@ -3,7 +3,7 @@ import React, { forwardRef } from 'react';
 const Connect = forwardRef((props, ref) => {
   const handleLogin = () => {
     // Redirect the browser to your backend's /login route, which handles the Spotify auth flow
-    window.location.href = 'https://moodmuzik-server.onrender.com/login';
+    window.location.href = 'https://moodmuzik.com/login';
   };
 
   return (

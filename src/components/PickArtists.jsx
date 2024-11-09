@@ -51,7 +51,7 @@ const PickArtists = ({ setMoodColor }) => {
       setLoadingArtists(true);
       try {
         const response = await fetch(
-          'https://moodmuzik-server.onrender.com/artists?type=artists&time_range=long_term&limit=50',
+          'https://api.moodmuzik.com/artists?type=artists&time_range=long_term&limit=50',
           {
             method: 'GET',
             credentials: 'include',
@@ -113,7 +113,7 @@ const PickArtists = ({ setMoodColor }) => {
       });
 
       const response = await fetch(
-        `https://moodmuzik-server.onrender.com/tracks?${queryParams}`,
+        `https://api.moodmuzik.com/tracks?${queryParams}`,
         { method: 'GET', credentials: 'include' }
       );
 
@@ -153,7 +153,7 @@ const PickArtists = ({ setMoodColor }) => {
       };
 
       const response = await fetch(
-        'https://moodmuzik-server.onrender.com/create_playlist',
+        'https://api.moodmuzik.com/create_playlist',
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -182,15 +182,12 @@ const PickArtists = ({ setMoodColor }) => {
   const addTracksToPlaylist = async (playlistId, tracks) => {
     const trackUris = tracks.map((track) => track.uri);
     try {
-      const response = await fetch(
-        'https://moodmuzik-server.onrender.com/add',
-        {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          credentials: 'include',
-          body: JSON.stringify({ playlist_id: playlistId, uris: trackUris }),
-        }
-      );
+      const response = await fetch('https://api.moodmuzik.com/add', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify({ playlist_id: playlistId, uris: trackUris }),
+      });
 
       if (!response.ok) throw new Error('Failed to add tracks to playlist');
       console.log('Tracks successfully added to playlist');
