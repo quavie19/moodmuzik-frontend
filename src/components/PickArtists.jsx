@@ -17,32 +17,32 @@ const PickArtists = ({ setMoodColor }) => {
 
   const moodSettings = {
     happy: {
-      valence: [0.7, 1],
-      energy: [0.7, 1],
-      danceability: [0.7, 1],
-      acousticness: [0, 0.2],
-      tempo: [120, 180],
+      valence: [0.6, 1], // was [0.7, 1]
+      energy: [0.6, 1], // was [0.7, 1]
+      danceability: [0.6, 1], // was [0.7, 1]
+      acousticness: [0, 0.3], // was [0, 0.2]
+      tempo: [100, 180], // was [120, 180]
     },
     sad: {
-      valence: [0, 0.3],
-      energy: [0, 0.3],
-      danceability: [0, 0.4],
-      acousticness: [0.5, 1],
-      tempo: [60, 100],
+      valence: [0, 0.4], // was [0, 0.3]
+      energy: [0, 0.4], // was [0, 0.3]
+      danceability: [0, 0.5], // was [0, 0.4]
+      acousticness: [0.4, 1], // was [0.5, 1]
+      tempo: [50, 110], // was [60, 100]
     },
     energetic: {
-      valence: [0.3, 0.5],
-      energy: [0.8, 1],
-      danceability: [0.6, 1],
-      acousticness: [0, 0.1],
-      tempo: [130, 170],
+      valence: [0.2, 0.6], // was [0.3, 0.5]
+      energy: [0.7, 1], // was [0.8, 1]
+      danceability: [0.5, 1], // was [0.6, 1]
+      acousticness: [0, 0.2], // was [0, 0.1]
+      tempo: [120, 180], // was [130, 170]
     },
     chill: {
-      valence: [0.5, 0.7],
-      energy: [0.2, 0.6],
-      danceability: [0.5, 0.8],
-      acousticness: [0.4, 0.8],
-      tempo: [90, 120],
+      valence: [0.4, 0.8], // was [0.5, 0.7]
+      energy: [0.1, 0.7], // was [0.2, 0.6]
+      danceability: [0.4, 0.9], // was [0.5, 0.8]
+      acousticness: [0.3, 0.9], // was [0.4, 0.8]
+      tempo: [80, 130], // was [90, 120]
     },
   };
 
@@ -52,10 +52,19 @@ const PickArtists = ({ setMoodColor }) => {
       try {
         const response = await fetch(
           'https://moodmuzik-server.onrender.com/artists?type=artists&time_range=long_term&limit=50',
-          { method: 'GET', credentials: 'include' }
+          {
+            method: 'GET',
+            credentials: 'include',
+          }
         );
 
-        if (!response.ok) throw new Error('Failed to fetch artists');
+        if (!response.ok) {
+          // Log the response error to debug
+          const errorData = await response.json();
+          console.error('Error fetching top artists:', errorData);
+          throw new Error(errorData.error || 'Failed to fetch artists');
+        }
+
         const data = await response.json();
         setArtists(data.items || []);
       } catch (error) {
@@ -65,6 +74,7 @@ const PickArtists = ({ setMoodColor }) => {
         setLoadingArtists(false);
       }
     };
+
     fetchTopArtists();
   }, []);
 
