@@ -394,3 +394,47 @@ grid-template-columns: repeat(2, 1fr);    /* Single column layout for very small
     }
 }
 
+.signup{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  gap: 10px;
+  padding-bottom: 10px;
+}
+
+.mt-5{
+  margin-top: 5px;
+  padding: 10px;
+  font-family: sans-serif;
+}
+
+.signup h1{
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+form {
+display: flex;
+flex-direction: column;
+gap: 20px;
+}
+
+input{
+  margin-top: 5px;
+  font-size: 1rem;
+  padding: 20px;
+  width: 350px;
+}
+
+form button{
+  background: #000;
+  color: #fff;
+}
+
+form button:hover {
+  background: #fff;
+  color: #000;
+}

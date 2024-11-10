@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home'; // Ensure the Home component is imported
 import PickArtists from './components/PickArtists'; // Import PickArtists
 import Embed from './components/Embed';
+import Signup from './components/Signup';
 
 function App() {
   const [moodColor, setMoodColor] = useState(
@@ -22,9 +23,9 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path='/' element={<Signup />} />
 
-        {/* Wrap PickArtists with a wrapper to pass setMoodColor */}
+        <Route path='/home' element={<Home />} />
         <Route
           path='/artists'
           element={<PickArtists setMoodColor={setMoodColor} />}
