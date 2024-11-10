@@ -39,9 +39,10 @@ header {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 100vh;
   text-align: center;
-  padding: 10px;
+  padding: 30px 20px;
+  row-gap: 10px;
+  height: 100VH;
 
 }
 
@@ -54,21 +55,7 @@ header p {
 
 }
 
-header div.icon {
-  margin-bottom: 2rem;
-}
 
-button.icon{
-    background-color: initial;
-      /* Reset background color */
-      color: #fff;
-      /* Reset text color */
-      padding: initial;
-      /* Reset padding */
-      border-radius: initial;
-      /* Reset border radius */
-      border: initial;
-}
 
 
 
@@ -291,7 +278,8 @@ button:hover {
 div.embed{
   display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
+    row-gap: 60px;
     align-items: center;
     height: 100vh;
     text-align: center;
@@ -355,9 +343,14 @@ button.embed:hover {
 @media screen and (max-width: 480px) {
 
  #playlist-length div p,
- #mood-selector div p,
- #choose-artist h1{
+ #mood-selector div p
+ {
   font-size: 1.3rem;
+ }
+
+ #choose-artist h1{
+  font-size: .8rem;
+  padding-bottom: 20px;
  }
 
  #connect-spotify  {
@@ -372,7 +365,8 @@ button.embed:hover {
  }
 
  .embed h1{
-  font-size: 1rem;
+  font-size: .7rem;
+  padding-top: 25px;
  }
 
  .embed button{
@@ -392,7 +386,30 @@ grid-template-columns: repeat(2, 1fr);    /* Single column layout for very small
       width: 150px;
       height: 150px;
     }
+div .signup{
+  padding: 0 8px;
 }
+
+div .signup h1{
+  font-size: 1rem;
+}
+div .signup p{
+  font-size: .6rem;
+}
+.signup input {
+  margin-top: 5px;
+  font-size: 1rem;
+  padding: 10px;
+  width: 250px;
+}
+
+form button {
+  background: #000;
+  color: #fff;
+}
+
+}
+
 
 .signup{
   display: flex;

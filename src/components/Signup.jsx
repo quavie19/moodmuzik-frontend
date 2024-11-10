@@ -16,7 +16,9 @@ const Signup = () => {
 
       if (response.ok) {
         // Update the success message
-        setMessage('Thank you! You’ve successfully signed up.');
+        setMessage(
+          'Thank you! You’ve successfully signed up. Please check inbox or spam folder for confirmation email'
+        );
         setEmail(''); // Clear the email input after successful submission
       } else {
         setMessage('Something went wrong. Please try again.');
@@ -38,7 +40,7 @@ const Signup = () => {
       {/* Display the success message */}
       <form onSubmit={onSubmitForm} className='mt-5 form-container'>
         <input
-          placeholder='Spotify Email'
+          placeholder='Email'
           type='email'
           id='email'
           name='email'

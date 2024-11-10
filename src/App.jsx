@@ -6,19 +6,19 @@ import Embed from './components/Embed';
 import Signup from './components/Signup';
 
 function App() {
-  const [moodColor, setMoodColor] = useState(
-    localStorage.getItem('selectedMoodColor') || 'white'
-  );
+  // const [moodColor, setMoodColor] = useState(
+  //   localStorage.getItem('selectedMoodColor') || 'white'
+  // );
 
-  useEffect(() => {
-    document.body.style.backgroundColor = moodColor;
-  }, [moodColor]);
+  // useEffect(() => {
+  //   document.body.style.backgroundColor = moodColor;
+  // }, [moodColor]);
 
-  const resetAppState = () => {
-    setMoodColor('white'); // reset color
-    localStorage.removeItem('selectedMoodColor'); // clear local storage
-    // Reset any other state you might have
-  };
+  // const resetAppState = () => {
+  //   setMoodColor('white'); // reset color
+  //   localStorage.removeItem('selectedMoodColor'); // clear local storage
+  //   // Reset any other state you might have
+  // };
 
   return (
     <Router>
@@ -26,16 +26,8 @@ function App() {
         <Route path='/' element={<Signup />} />
 
         <Route path='/home' element={<Home />} />
-        <Route
-          path='/artists'
-          element={<PickArtists setMoodColor={setMoodColor} />}
-        />
-        <Route
-          path='/embed/:playlistId'
-          element={
-            <Embed setMoodColor={setMoodColor} resetAppState={resetAppState} />
-          }
-        />
+        <Route path='/artists' element={<PickArtists />} />
+        <Route path='/embed/:playlistId' element={<Embed />} />
       </Routes>
     </Router>
   );
