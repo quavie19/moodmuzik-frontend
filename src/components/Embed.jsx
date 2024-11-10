@@ -24,7 +24,7 @@ const Embed = () => {
 
   const handleCreateAnother = () => {
     resetPlaylistSelections(); // Reset all settings
-    navigate('/'); // Navigate to home page
+    navigate('/home'); // Navigate to home page
   };
 
   return (
