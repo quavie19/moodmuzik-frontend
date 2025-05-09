@@ -455,3 +455,30 @@ form button:hover {
   background: #fff;
   color: #000;
 }
+
+
+#root>div>p:nth-child(6)>a {
+  text-decoration: underline;
+  color: blue ;
+ 
+}
+
+#root>div>p:nth-child(10)>a{
+  text-decoration: underline;
+    color: blue;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 20px 0;
+  background-color: black ;
+  color: white;
+  text-align: center;
+}
+
+#root>footer>div>div>a:nth-child(1){
+  padding: 20px;
+}
