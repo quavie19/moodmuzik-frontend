@@ -198,6 +198,11 @@ button:hover {
   color: #1ED760;
 }
 
+#connect-spotify>div:nth-child(1){
+  font-family: sans-serif;
+  font-size: 70px;
+}
+
 /* CHOOSE ARTIST  */
 
 #choose-artist {
