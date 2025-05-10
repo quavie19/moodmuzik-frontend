@@ -461,6 +461,10 @@ form button:hover {
   color: #000;
 }
 
+.privacy, .terms{
+  background: #fff;
+}
+
 
 #root>div>p:nth-child(6)>a {
   text-decoration: underline;

@@ -27,6 +27,11 @@ const Embed = () => {
     navigate('/'); // Navigate to home page
   };
 
+  const handleDisconnect = () => {
+    localStorage.removeItem('spotify_access_token');
+    window.location.href = 'https://api.moodmuzik.com/logout';
+  };
+
   return (
     <div className='embed'>
       <h1>Your Mood Muzik Playlist was created</h1>
@@ -59,6 +64,9 @@ const Embed = () => {
         </button>
         <button className='embed' onClick={handleCreateAnother}>
           Create Another
+        </button>
+        <button className='embed' onClick={handleDisconnectr}>
+          Disconnect
         </button>
       </div>
     </div>

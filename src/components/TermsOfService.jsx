@@ -1,6 +1,6 @@
 const TermsOfService = () => {
   return (
-    <div className='max-w-3xl mx-auto p-6 text-gray-800'>
+    <div className='terms max-w-3xl mx-auto p-6 text-gray-800'>
       <h1 className='text-3xl font-bold mb-4'>Terms of Service</h1>
       <p className='mb-4'>
         <strong>Effective Date:</strong> May 9th, 2025
