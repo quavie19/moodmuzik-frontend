@@ -65,7 +65,7 @@ const Embed = () => {
         <button className='embed' onClick={handleCreateAnother}>
           Create Another
         </button>
-        <button className='embed' onClick={handleDisconnectr}>
+        <button className='embed' onClick={handleDisconnect}>
           Disconnect
         </button>
       </div>
